@@ -1,0 +1,1696 @@
+
+/* =========================================
+   TEST VOCACIONAL - DESARROLLO DE SOFTWARE
+   Unidad Educativa Fiscal Dolores Sucre
+========================================= */
+
+:root {
+    --azul-oscuro: #173653;
+    --azul: #24649b;
+    --azul-claro: #eaf3fc;
+    --azul-borde: #dce7f1;
+    --fondo: #f4f7fb;
+    --blanco: #ffffff;
+    --texto: #263d53;
+    --texto-suave: #697b8d;
+    --verde: #428b78;
+    --rojo: #bd525c;
+    --sombra: 0 12px 35px rgba(28, 60, 91, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+
+    background: var(--fondo);
+    color: var(--texto);
+
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+button,
+a {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+}
+
+/* =========================================
+   ENCABEZADO
+========================================= */
+
+.encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 18px max(5%, calc((100% - 1150px) / 2));
+
+    background: var(--blanco);
+    border-bottom: 1px solid #e6edf4;
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    text-decoration: none;
+}
+
+.logo-escuela {
+    display: block;
+    width: 65px;
+    height: 65px;
+    flex-shrink: 0;
+    object-fit: contain;
+    border-radius: 8px;
+}
+.nombre-institucion {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.35;
+}
+
+.nombre-superior {
+    color: var(--texto-suave);
+    font-size: 0.68rem;
+    letter-spacing: 1px;
+}
+
+.nombre-institucion strong {
+    color: var(--azul-oscuro);
+    font-size: 1.15rem;
+}
+
+.volver-inicio {
+    color: var(--azul);
+    font-size: 0.92rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.volver-inicio:hover {
+    color: var(--azul-oscuro);
+}
+
+/* =========================================
+   CONTENEDOR Y PANTALLAS
+========================================= */
+
+.contenedor-principal {
+    width: min(100% - 32px, 850px);
+    margin: 42px auto 55px;
+    flex: 1;
+}
+
+.pantalla {
+    padding: clamp(24px, 5vw, 54px);
+
+    background: var(--blanco);
+    border: 1px solid #e6edf4;
+    border-radius: 22px;
+
+    box-shadow: var(--sombra);
+
+    animation: aparecer 0.5s ease both;
+}
+
+.etiqueta {
+    display: inline-block;
+
+    color: var(--azul);
+    font-size: 0.74rem;
+    font-weight: 750;
+    letter-spacing: 1.7px;
+}
+
+/* =========================================
+   BIENVENIDA
+========================================= */
+
+.pantalla-bienvenida {
+    text-align: center;
+}
+
+.ilustracion {
+    position: relative;
+
+    display: grid;
+    place-items: center;
+
+    min-height: 205px;
+    margin: 12px auto 20px;
+}
+
+.circulo-fondo {
+    position: absolute;
+
+    width: 195px;
+    height: 195px;
+
+    background: #e7f1fb;
+    border-radius: 50%;
+}
+
+.ventana-codigo {
+    position: relative;
+    z-index: 1;
+
+    width: 205px;
+    min-height: 145px;
+    padding: 20px;
+
+    background: white;
+    border: 1px solid #d9e6f2;
+    border-radius: 13px;
+
+    box-shadow: 0 10px 30px rgba(29, 73, 111, 0.12);
+
+    text-align: left;
+    transform: rotate(-4deg);
+}
+
+.puntos-ventana {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.puntos-ventana span {
+    width: 8px;
+    height: 8px;
+    background: #a9c9e8;
+    border-radius: 50%;
+}
+
+.puntos-ventana span:first-child {
+    background: #e8a6a6;
+}
+
+.puntos-ventana span:nth-child(2) {
+    background: #edce91;
+}
+
+.linea-codigo {
+    height: 6px;
+    margin: 10px 0;
+    background: #b5d1ec;
+    border-radius: 8px;
+}
+
+.linea-corta {
+    width: 35%;
+}
+
+.linea-media {
+    width: 65%;
+    background: #8eb9df;
+}
+
+.linea-larga {
+    width: 85%;
+}
+
+.simbolo-codigo {
+    position: absolute;
+    right: 15px;
+    bottom: 13px;
+
+    color: var(--azul);
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.adorno {
+    position: absolute;
+    z-index: 2;
+
+    display: grid;
+    place-items: center;
+
+    width: 47px;
+    height: 47px;
+
+    color: var(--azul-oscuro);
+    background: white;
+    border: 1px solid #dce8f3;
+    border-radius: 12px;
+
+    box-shadow: 0 5px 15px rgba(29, 73, 111, 0.09);
+
+    font-weight: 750;
+}
+
+.adorno-uno {
+    top: 20px;
+    right: calc(50% - 125px);
+    color: #397bb7;
+}
+
+.adorno-dos {
+    bottom: 10px;
+    left: calc(50% - 130px);
+    color: #428b78;
+}
+
+.pantalla-bienvenida h1 {
+    margin: 12px 0 15px;
+
+    color: var(--azul-oscuro);
+    font-size: clamp(2rem, 5vw, 3.15rem);
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.pantalla-bienvenida h1 span {
+    color: var(--azul);
+}
+
+.descripcion-principal {
+    max-width: 590px;
+    margin: 0 auto;
+
+    color: var(--texto-suave);
+    font-size: 1.05rem;
+}
+
+/* DATOS DEL TEST */
+
+.datos-test {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px 32px;
+
+    margin: 30px 0 23px;
+}
+
+.dato {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    text-align: left;
+}
+
+.icono-dato {
+    display: grid;
+    place-items: center;
+
+    width: 42px;
+    height: 42px;
+
+    color: var(--azul);
+    background: var(--azul-claro);
+    border-radius: 12px;
+
+    font-size: 1.4rem;
+}
+
+.dato div {
+    display: flex;
+    flex-direction: column;
+}
+
+.dato strong {
+    color: var(--azul-oscuro);
+    font-size: 0.91rem;
+}
+
+.dato small {
+    color: var(--texto-suave);
+    font-size: 0.8rem;
+}
+
+.nota-bienvenida {
+    max-width: 590px;
+    margin: 0 auto 24px;
+    padding: 13px 17px;
+
+    color: #516d86;
+    background: #f2f7fc;
+    border-radius: 10px;
+
+    font-size: 0.88rem;
+}
+
+/* =========================================
+   BOTONES
+========================================= */
+
+.boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    min-height: 48px;
+    padding: 12px 22px;
+
+    border: 1px solid transparent;
+    border-radius: 10px;
+
+    font-size: 0.95rem;
+    font-weight: 650;
+    text-decoration: none;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.boton:hover {
+    transform: translateY(-2px);
+}
+
+.boton:focus-visible {
+    outline: 3px solid #8dbce8;
+    outline-offset: 3px;
+}
+
+.boton-principal {
+    color: white;
+    background: var(--azul);
+    box-shadow: 0 5px 13px rgba(36, 100, 155, 0.16);
+}
+
+.boton-principal:hover {
+    background: var(--azul-oscuro);
+    box-shadow: 0 7px 18px rgba(36, 100, 155, 0.2);
+}
+
+.boton-secundario {
+    color: var(--azul);
+    background: white;
+    border-color: #cbdceb;
+}
+
+.boton-secundario:hover {
+    background: #f2f7fc;
+    border-color: #9bbbd8;
+}
+
+.nota-orientativa {
+    margin: 17px 0 0;
+    color: #8291a0;
+    font-size: 0.78rem;
+}
+
+/* =========================================
+   ENCABEZADO DE LAS PREGUNTAS
+========================================= */
+
+.encabezado-test {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.encabezado-test h1 {
+    margin: 7px 0 4px;
+    color: var(--azul-oscuro);
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    line-height: 1.25;
+}
+
+.encabezado-test p {
+    margin: 0;
+    color: var(--texto-suave);
+    font-size: 0.94rem;
+}
+
+.numero-pregunta {
+    flex-shrink: 0;
+    padding: 7px 10px;
+
+    color: var(--azul);
+    background: var(--azul-claro);
+    border-radius: 8px;
+
+    font-size: 0.82rem;
+    font-weight: 750;
+}
+
+/* BARRA DE PROGRESO */
+
+.progreso-contenedor {
+    margin: 27px 0 29px;
+}
+
+.progreso-textos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    margin-bottom: 9px;
+
+    color: var(--texto-suave);
+    font-size: 0.82rem;
+}
+
+.barra-progreso {
+    width: 100%;
+    height: 8px;
+
+    overflow: hidden;
+
+    background: #e9eff5;
+    border-radius: 20px;
+}
+
+.progreso-actual {
+    width: 0;
+    height: 100%;
+
+    background: linear-gradient(90deg, #397bb7, #6fa8d8);
+    border-radius: inherit;
+
+    transition: width 0.4s ease;
+}
+
+/* =========================================
+   TARJETA DE PREGUNTA
+========================================= */
+
+.tarjeta-pregunta {
+    padding: clamp(19px, 4vw, 30px);
+
+    background: #fbfcfe;
+    border: 1px solid #e4ebf3;
+    border-radius: 15px;
+}
+
+.categoria-pregunta {
+    color: #397bb7;
+    font-size: 0.72rem;
+    font-weight: 750;
+    letter-spacing: 1.3px;
+}
+
+.tarjeta-pregunta h2 {
+    margin: 12px 0 8px;
+
+    color: var(--azul-oscuro);
+    font-size: clamp(1.25rem, 3.5vw, 1.65rem);
+    line-height: 1.4;
+}
+
+.ayuda-pregunta {
+    margin: 0 0 22px;
+    color: var(--texto-suave);
+    font-size: 0.86rem;
+}
+
+/* OPCIONES */
+
+.opciones {
+    display: grid;
+    gap: 11px;
+}
+
+.opcion {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    width: 100%;
+    padding: 15px;
+
+    color: var(--texto);
+    background: white;
+    border: 1px solid #dce6f0;
+    border-radius: 10px;
+
+    text-align: left;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.opcion:hover {
+    background: #f6faff;
+    border-color: #a7c6e3;
+}
+
+.opcion:focus-visible {
+    outline: 3px solid #8dbce8;
+    outline-offset: 2px;
+}
+
+.opcion.seleccionada {
+    color: var(--azul-oscuro);
+    background: #eaf3fc;
+    border-color: #397bb7;
+    box-shadow: 0 0 0 1px #397bb7;
+}
+
+.marcador-opcion {
+    display: grid;
+    place-items: center;
+
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+
+    color: #74889a;
+    background: white;
+    border: 1px solid #bdccda;
+    border-radius: 50%;
+
+    font-size: 0.75rem;
+}
+
+.opcion.seleccionada .marcador-opcion {
+    color: white;
+    background: var(--azul);
+    border-color: var(--azul);
+}
+
+.texto-opcion {
+    flex: 1;
+    font-size: 0.93rem;
+}
+
+.mensaje-error {
+    margin: 15px 0 0;
+    color: var(--rojo);
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+/* NAVEGACIÓN DE PREGUNTAS */
+
+.navegacion-preguntas {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    margin-top: 23px;
+}
+
+.pie-preguntas {
+    margin: 24px 0 0;
+    color: #8291a0;
+    font-size: 0.79rem;
+    text-align: center;
+}
+
+/* =========================================
+   RESULTADOS
+========================================= */
+
+.pantalla-resultados {
+    text-align: center;
+}
+
+.resultado-icono {
+    display: grid;
+    place-items: center;
+
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 18px;
+
+    color: var(--verde);
+    background: #e7f5ef;
+    border-radius: 50%;
+
+    font-size: 2rem;
+    font-weight: 750;
+}
+
+.pantalla-resultados > h1 {
+    margin: 9px 0;
+    color: var(--azul-oscuro);
+    font-size: clamp(1.9rem, 5vw, 2.7rem);
+    line-height: 1.2;
+}
+
+.descripcion-resultado {
+    max-width: 600px;
+    margin: 0 auto 27px;
+    color: var(--texto-suave);
+}
+
+.tarjeta-resultado {
+    padding: clamp(20px, 4vw, 32px);
+
+    background: #f2f7fc;
+    border: 1px solid #dce8f3;
+    border-radius: 16px;
+}
+
+.titulo-resultado {
+    color: #617c95;
+    font-size: 0.72rem;
+    font-weight: 750;
+    letter-spacing: 1.3px;
+}
+
+.puntuacion {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 5px;
+
+    margin: 10px 0 15px;
+}
+
+.puntuacion strong {
+    color: var(--azul);
+    font-size: 3.5rem;
+    line-height: 1.1;
+}
+
+.puntuacion span {
+    color: var(--texto-suave);
+    font-size: 1.05rem;
+}
+
+.barra-resultado {
+    max-width: 390px;
+    height: 10px;
+    margin: 0 auto 22px;
+}
+
+.tarjeta-resultado h2 {
+    margin: 0 0 10px;
+    color: var(--azul-oscuro);
+    font-size: 1.35rem;
+}
+
+.tarjeta-resultado p {
+    max-width: 560px;
+    margin: 0 auto;
+    color: #526a80;
+    font-size: 0.96rem;
+}
+
+/* RECOMENDACIONES */
+
+.recomendaciones {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.recomendaciones h2 {
+    color: var(--azul-oscuro);
+    font-size: 1.25rem;
+}
+
+.recomendaciones ul {
+    display: grid;
+    gap: 12px;
+
+    margin: 15px 0 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.recomendaciones li {
+    position: relative;
+    padding: 13px 15px 13px 43px;
+
+    color: #526a80;
+    background: #fbfcfe;
+    border: 1px solid #e4ebf3;
+    border-radius: 10px;
+
+    font-size: 0.92rem;
+}
+
+.recomendaciones li::before {
+    content: "✓";
+    position: absolute;
+    left: 15px;
+    top: 12px;
+
+    color: var(--verde);
+    font-weight: 800;
+}
+
+.aviso-resultado {
+    margin-top: 25px;
+    padding: 17px;
+
+    color: #526a80;
+    background: #fff9e9;
+    border: 1px solid #f0e4bd;
+    border-radius: 11px;
+
+    font-size: 0.88rem;
+    text-align: left;
+}
+
+.aviso-resultado strong {
+    color: #735c2b;
+}
+
+.acciones-resultado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    margin-top: 27px;
+}
+
+/* =========================================
+   PIE DE PÁGINA
+========================================= */
+
+.pie-pagina {
+    padding: 25px 20px 28px;
+    background: white;
+    border-top: 1px solid #e5edf4;
+    text-align: center;
+}
+
+.separador-footer {
+    width: 45px;
+    height: 3px;
+    margin: 0 auto 15px;
+
+    background: #a9c9e8;
+    border-radius: 5px;
+}
+
+.pie-pagina p {
+    margin: 0;
+    color: var(--azul-oscuro);
+    font-size: 0.88rem;
+    font-weight: 650;
+}
+
+.pie-pagina span {
+    color: var(--texto-suave);
+    font-size: 0.78rem;
+}
+
+/* =========================================
+   ANIMACIONES
+========================================= */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   TABLETAS Y CELULARES
+========================================= */
+
+@media (max-width: 600px) {
+    .encabezado {
+        padding: 14px 16px;
+    }
+
+    .logo-escuela {
+        width: 44px;
+        height: 44px;
+    }
+
+    .nombre-superior {
+        font-size: 0.56rem;
+        letter-spacing: 0.6px;
+    }
+
+    .nombre-institucion strong {
+        font-size: 0.98rem;
+    }
+
+    .volver-inicio {
+        font-size: 0.8rem;
+    }
+
+    .contenedor-principal {
+        width: calc(100% - 22px);
+        margin: 20px auto 30px;
+    }
+
+    .pantalla {
+        padding: 23px 17px;
+        border-radius: 16px;
+    }
+
+    .ilustracion {
+        min-height: 180px;
+    }
+
+    .circulo-fondo {
+        width: 165px;
+        height: 165px;
+    }
+
+    .ventana-codigo {
+        width: 180px;
+    }
+
+    .adorno-uno {
+        right: calc(50% - 112px);
+    }
+
+    .adorno-dos {
+        left: calc(50% - 115px);
+    }
+
+    .datos-test {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+
+        width: fit-content;
+        margin: 25px auto 20px;
+    }
+
+    .encabezado-test {
+        flex-direction: column;
+    }
+
+    .numero-pregunta {
+        align-self: flex-start;
+    }
+
+    .tarjeta-pregunta {
+        padding: 18px 13px;
+    }
+
+    .opcion {
+        padding: 13px 11px;
+    }
+
+    .texto-opcion {
+        font-size: 0.87rem;
+    }
+
+    .navegacion-preguntas .boton {
+        gap: 6px;
+        padding: 11px 13px;
+        font-size: 0.86rem;
+    }
+
+    .puntuacion strong {
+        font-size: 3rem;
+    }
+
+    .acciones-resultado {
+        flex-direction: column;
+    }
+
+    .acciones-resultado .boton {
+        width: 100%;
+    }
+}
+
+@media (max-width: 360px) {
+    .nombre-superior {
+        font-size: 0.49rem;
+    }
+
+    .nombre-institucion strong {
+        font-size: 0.87rem;
+    }
+
+    .volver-inicio {
+        font-size: 0.72rem;
+    }
+
+    .navegacion-preguntas .boton {
+        padding: 10px;
+    }
+}
+
+/* =========================================
+   MEJORAS VISUALES — DESARROLLO DE SOFTWARE
+   Estilo tecnológico, moderno e interactivo
+========================================= */
+
+/* Fondo con luces suaves */
+body {
+    background:
+        radial-gradient(
+            circle at 8% 12%,
+            rgba(89, 157, 218, 0.13),
+            transparent 27%
+        ),
+        radial-gradient(
+            circle at 92% 72%,
+            rgba(86, 177, 190, 0.12),
+            transparent 25%
+        ),
+        linear-gradient(135deg, #f5f8fd, #edf3fa 55%, #f8faff);
+}
+
+/* Encabezado más elegante */
+.encabezado {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+
+    background: rgba(255, 255, 255, 0.91);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid rgba(207, 222, 237, 0.8);
+    box-shadow: 0 5px 24px rgba(29, 62, 94, 0.045);
+
+    transition: box-shadow 0.3s ease;
+}
+
+.encabezado:hover {
+    box-shadow: 0 7px 28px rgba(29, 62, 94, 0.075);
+}
+
+.logo-escuela {
+    transition: transform 0.35s ease;
+}
+
+.marca:hover .logo-escuela {
+    transform: rotate(-4deg) scale(1.05);
+}
+
+.nombre-institucion strong {
+    transition: color 0.25s ease;
+}
+
+.marca:hover .nombre-institucion strong {
+    color: #287ab8;
+}
+
+.volver-inicio {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 9px 13px;
+    border-radius: 9px;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.volver-inicio:hover {
+    background: #edf5fc;
+    transform: translateX(-3px);
+}
+
+/* Contenedor principal */
+.contenedor-principal {
+    width: min(100% - 36px, 900px);
+    margin-top: 48px;
+    margin-bottom: 65px;
+}
+
+/* Tarjetas principales */
+.pantalla {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(213, 226, 239, 0.95);
+    border-radius: 25px;
+
+    box-shadow:
+        0 25px 65px rgba(28, 60, 91, 0.075),
+        0 4px 14px rgba(28, 60, 91, 0.035);
+
+    animation: aparecerPantalla 0.55s ease both;
+}
+
+/* Línea luminosa superior */
+.pantalla::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 8%;
+
+    width: 84%;
+    height: 3px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #7bb7e8,
+        #3a91cf,
+        #80d1d3,
+        transparent
+    );
+
+    border-radius: 0 0 8px 8px;
+    opacity: 0.85;
+    pointer-events: none;
+}
+
+/* Etiquetas de sección */
+.etiqueta {
+    padding: 7px 12px;
+
+    color: #246ba5;
+    background: #edf6fe;
+    border: 1px solid #dcecfb;
+    border-radius: 50px;
+
+    font-size: 0.72rem;
+    letter-spacing: 1.3px;
+}
+
+/* =========================================
+   BIENVENIDA
+========================================= */
+
+.pantalla-bienvenida {
+    background:
+        radial-gradient(
+            circle at 50% 24%,
+            rgba(218, 237, 253, 0.5),
+            transparent 34%
+        ),
+        #ffffff;
+}
+
+.pantalla-bienvenida::after {
+    content: "";
+    position: absolute;
+    top: -115px;
+    right: -100px;
+    z-index: -1;
+
+    width: 290px;
+    height: 290px;
+
+    background: radial-gradient(
+        circle,
+        rgba(105, 170, 224, 0.13),
+        rgba(105, 170, 224, 0)
+    );
+
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.pantalla-bienvenida h1 {
+    margin-top: 14px;
+    letter-spacing: -1.5px;
+}
+
+.pantalla-bienvenida h1 span {
+    background: linear-gradient(100deg, #24649b, #4096cf);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Ilustración animada */
+.circulo-fondo {
+    background: linear-gradient(
+        145deg,
+        #e7f3ff,
+        #d8eafa 65%,
+        #e5f8f8
+    );
+
+    box-shadow:
+        inset 0 0 30px rgba(255, 255, 255, 0.8),
+        0 0 0 12px rgba(225, 240, 253, 0.33);
+
+    animation: pulsoFondo 5s ease-in-out infinite;
+}
+
+.ventana-codigo {
+    border-color: #d1e2f2;
+
+    box-shadow:
+        0 20px 40px rgba(28, 72, 111, 0.13),
+        0 3px 8px rgba(28, 72, 111, 0.05);
+
+    animation: flotarCodigo 5s ease-in-out infinite;
+    transition: box-shadow 0.3s ease;
+}
+
+.puntos-ventana span {
+    transition: transform 0.3s ease;
+}
+
+.ventana-codigo:hover .puntos-ventana span {
+    transform: scale(1.22);
+}
+
+.linea-codigo {
+    background: linear-gradient(90deg, #a3c9eb, #d2e5f7);
+}
+
+.linea-media {
+    background: linear-gradient(90deg, #6da9d9, #a9d5ed);
+}
+
+.simbolo-codigo {
+    color: #2478b7;
+    text-shadow: 0 2px 10px rgba(36, 120, 183, 0.15);
+}
+
+.adorno {
+    border-color: rgba(196, 219, 240, 0.95);
+    box-shadow: 0 9px 24px rgba(29, 73, 111, 0.12);
+
+    animation: flotarAdorno 4s ease-in-out infinite;
+}
+
+.adorno-dos {
+    animation-delay: -2s;
+}
+
+.nota-bienvenida {
+    color: #3e617d;
+    background: linear-gradient(110deg, #f0f7fd, #f6fbff);
+    border: 1px solid #e0edf8;
+    border-left: 3px solid #7eafd8;
+    border-radius: 12px;
+}
+
+/* =========================================
+   BOTONES
+========================================= */
+
+.boton {
+    position: relative;
+    overflow: hidden;
+
+    border-radius: 12px;
+    font-weight: 700;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.boton-principal {
+    background: linear-gradient(115deg, #24649b, #307fba);
+    box-shadow: 0 7px 18px rgba(36, 100, 155, 0.19);
+}
+
+.boton-principal:hover {
+    background: linear-gradient(115deg, #1b507d, #24649b);
+    box-shadow: 0 11px 25px rgba(36, 100, 155, 0.25);
+    transform: translateY(-3px);
+}
+
+.boton-principal span {
+    display: inline-block;
+    transition: transform 0.25s ease;
+}
+
+.boton-principal:hover span {
+    transform: translateX(4px);
+}
+
+.boton-secundario {
+    border-color: #d0dfed;
+    box-shadow: 0 3px 10px rgba(28, 60, 91, 0.025);
+}
+
+.boton-secundario:hover {
+    color: #173653;
+    background: #edf6fe;
+    border-color: #aacbe8;
+    box-shadow: 0 5px 14px rgba(28, 60, 91, 0.06);
+}
+
+/* Estado deshabilitado del botón Anterior */
+.boton:disabled {
+    color: #9aa9b6;
+    background: #edf1f5;
+    border-color: #e1e7ec;
+    box-shadow: none;
+    cursor: not-allowed;
+    transform: none;
+    opacity: 0.8;
+}
+
+/* =========================================
+   ENCABEZADO Y PROGRESO DEL TEST
+========================================= */
+
+.encabezado-test h1 {
+    letter-spacing: -0.7px;
+}
+
+.numero-pregunta {
+    padding: 9px 13px;
+    color: #226aa5;
+    background: linear-gradient(135deg, #eaf5ff, #e1effc);
+    border: 1px solid #d8e9f8;
+    border-radius: 10px;
+}
+
+.progreso-contenedor {
+    padding: 17px;
+    background: rgba(243, 248, 253, 0.82);
+    border: 1px solid #e7eff7;
+    border-radius: 13px;
+}
+
+.progreso-textos {
+    font-size: 0.84rem;
+}
+
+.progreso-textos span:last-child {
+    color: #246ba5;
+    font-weight: 750;
+}
+
+.barra-progreso {
+    height: 10px;
+    background: #dfeaf4;
+    box-shadow: inset 0 1px 2px rgba(30, 68, 101, 0.05);
+}
+
+.progreso-actual {
+    background: linear-gradient(
+        90deg,
+        #276ba5,
+        #4b9ed7,
+        #70c6d0
+    );
+
+    background-size: 200% 100%;
+    box-shadow: 0 0 12px rgba(66, 153, 204, 0.18);
+    transition: width 0.45s ease;
+    animation: brilloProgreso 4s linear infinite;
+}
+
+/* =========================================
+   TARJETA Y OPCIONES DE RESPUESTA
+========================================= */
+
+.tarjeta-pregunta {
+    background:
+        linear-gradient(145deg, #ffffff, #f9fbfe);
+    border-color: #dfeaf4;
+    box-shadow: 0 8px 22px rgba(28, 60, 91, 0.035);
+}
+
+.tarjeta-pregunta h2 {
+    letter-spacing: -0.4px;
+}
+
+.categoria-pregunta {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 6px 10px;
+
+    color: #286fa9;
+    background: #edf6fe;
+    border-radius: 7px;
+}
+
+/* Pequeño indicador delante de la categoría */
+.categoria-pregunta::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+
+    background: #48a1ce;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(72, 161, 206, 0.12);
+}
+
+.opciones {
+    gap: 12px;
+}
+
+.opcion {
+    position: relative;
+    min-height: 62px;
+    padding: 16px;
+
+    background: linear-gradient(120deg, #ffffff, #fcfdff);
+    border-color: #dce7f1;
+    border-radius: 12px;
+
+    box-shadow: 0 2px 7px rgba(28, 60, 91, 0.018);
+}
+
+.opcion:hover {
+    background: linear-gradient(120deg, #f5faff, #edf6ff);
+    border-color: #9bc3e6;
+    box-shadow: 0 6px 16px rgba(36, 100, 155, 0.07);
+    transform: translateY(-2px);
+}
+
+.opcion.seleccionada {
+    background: linear-gradient(115deg, #eaf5ff, #e2f0fc);
+    border-color: #3f8cc6;
+    box-shadow:
+        0 0 0 1px #3f8cc6,
+        0 7px 17px rgba(36, 100, 155, 0.08);
+}
+
+.marcador-opcion {
+    width: 27px;
+    height: 27px;
+
+    color: #58768e;
+    background: #f4f8fc;
+    border-color: #d2e0ed;
+
+    font-weight: 750;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.opcion.seleccionada .marcador-opcion {
+    background: linear-gradient(135deg, #24649b, #4195cd);
+    border-color: #307db5;
+    box-shadow: 0 3px 8px rgba(36, 100, 155, 0.18);
+    transform: scale(1.05);
+}
+
+.texto-opcion {
+    line-height: 1.5;
+}
+
+/* Mensaje de validación */
+.mensaje-error {
+    padding: 11px 13px;
+    background: #fff0f1;
+    border: 1px solid #f3d3d6;
+    border-radius: 9px;
+
+    animation: aparecerPantalla 0.25s ease both;
+}
+
+.navegacion-preguntas {
+    margin-top: 25px;
+}
+
+.pie-preguntas {
+    padding-top: 15px;
+    border-top: 1px solid #edf1f5;
+}
+
+/* =========================================
+   RESULTADOS
+========================================= */
+
+.resultado-icono {
+    background: linear-gradient(135deg, #e6f7ef, #d8f0e7);
+    box-shadow: 0 0 0 9px rgba(226, 245, 236, 0.55);
+
+    animation: aparecerResultado 0.6s ease both;
+}
+
+.tarjeta-resultado {
+    background:
+        radial-gradient(
+            circle at 90% 0%,
+            rgba(118, 183, 222, 0.13),
+            transparent 37%
+        ),
+        linear-gradient(145deg, #f6faff, #edf5fd);
+
+    border-color: #d5e5f4;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.puntuacion strong {
+    color: #2676b2;
+    letter-spacing: -2px;
+}
+
+.barra-resultado {
+    background: #d9e7f3;
+}
+
+.tarjeta-resultado h2 {
+    letter-spacing: -0.3px;
+}
+
+.recomendaciones h2 {
+    letter-spacing: -0.3px;
+}
+
+.recomendaciones li {
+    background: linear-gradient(110deg, #ffffff, #fbfdff);
+    border-color: #e0eaf3;
+
+    transition:
+        transform 0.22s ease,
+        border-color 0.22s ease,
+        box-shadow 0.22s ease;
+}
+
+.recomendaciones li:hover {
+    border-color: #b5d1e9;
+    box-shadow: 0 5px 15px rgba(28, 60, 91, 0.05);
+    transform: translateX(3px);
+}
+
+.recomendaciones li::before {
+    display: grid;
+    place-items: center;
+
+    top: 13px;
+    width: 17px;
+    height: 17px;
+
+    color: #ffffff;
+    background: #428b78;
+    border-radius: 50%;
+
+    font-size: 0.7rem;
+}
+
+.aviso-resultado {
+    background: linear-gradient(120deg, #fffaf0, #fff7e5);
+    border-color: #f0e2bd;
+    border-left: 3px solid #d6b75e;
+}
+
+/* =========================================
+   PIE DE PÁGINA
+========================================= */
+
+.pie-pagina {
+    background: rgba(255, 255, 255, 0.9);
+    border-top-color: #dfe9f2;
+}
+
+.separador-footer {
+    width: 55px;
+    background: linear-gradient(90deg, #4e95c9, #87c8d1);
+}
+
+/* =========================================
+   ANIMACIONES
+========================================= */
+
+@keyframes aparecerPantalla {
+    from {
+        opacity: 0;
+        transform: translateY(13px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes aparecerResultado {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes flotarCodigo {
+    0%, 100% {
+        transform: translateY(0) rotate(-4deg);
+    }
+
+    50% {
+        transform: translateY(-7px) rotate(-2deg);
+    }
+}
+
+@keyframes flotarAdorno {
+    0%, 100% {
+        translate: 0 0;
+    }
+
+    50% {
+        translate: 0 -8px;
+    }
+}
+
+@keyframes pulsoFondo {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.045);
+    }
+}
+
+@keyframes brilloProgreso {
+    from {
+        background-position: 100% 0;
+    }
+
+    to {
+        background-position: -100% 0;
+    }
+}
+
+/* La animación se aplicará al cambiar de pregunta */
+.tarjeta-pregunta.animar-pregunta {
+    animation: entrarPregunta 0.38s ease both;
+}
+
+@keyframes entrarPregunta {
+    from {
+        opacity: 0;
+        transform: translateY(9px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   ADAPTACIÓN A PANTALLAS PEQUEÑAS
+========================================= */
+
+@media (max-width: 600px) {
+    .contenedor-principal {
+        width: calc(100% - 22px);
+        margin-top: 22px;
+        margin-bottom: 34px;
+    }
+
+    .encabezado {
+        gap: 9px;
+        padding: 12px;
+    }
+
+    .marca {
+        gap: 8px;
+        min-width: 0;
+    }
+
+    .volver-inicio {
+        gap: 4px;
+        padding: 8px;
+        white-space: nowrap;
+    }
+
+    .pantalla {
+        border-radius: 18px;
+        box-shadow: 0 13px 35px rgba(28, 60, 91, 0.065);
+    }
+
+    .pantalla-bienvenida h1 {
+        letter-spacing: -0.8px;
+    }
+
+    .progreso-contenedor {
+        padding: 13px;
+    }
+
+    .opcion {
+        min-height: 58px;
+    }
+
+    .opcion:hover {
+        transform: none;
+    }
+
+    .recomendaciones li:hover {
+        transform: none;
+    }
+}
+
+@media (max-width: 360px) {
+    .encabezado {
+        align-items: center;
+    }
+
+    .logo-escuela {
+        width: 38px;
+        height: 38px;
+    }
+
+    .nombre-superior {
+        font-size: 0.46rem;
+    }
+
+    .nombre-institucion strong {
+        font-size: 0.82rem;
+    }
+
+    .volver-inicio {
+        font-size: 0.69rem;
+    }
+
+    .pantalla {
+        padding-right: 13px;
+        padding-left: 13px;
+    }
+}

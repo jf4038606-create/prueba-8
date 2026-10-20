@@ -1,0 +1,283 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Test Vocacional | Desarrollo de Software</title>
+
+    <link rel="stylesheet" href="test-desarrollo-software.css">
+    <script src="test-desarrollo-software.js" defer></script>
+</head>
+
+<body>
+
+    <header class="encabezado">
+        <a href="index.html" class="marca">
+             <img src="logo-dolores-sucre.png" alt="Logo de la Unidad Educativa Fiscal Dolores Sucre"
+             class="logo-escuela">
+
+            <div class="nombre-institucion">
+                <span class="nombre-superior">UNIDAD EDUCATIVA FISCAL</span>
+                <strong>Dolores Sucre</strong>
+            </div>
+        </a>
+
+        <a href="index.html" class="volver-inicio">
+            <span aria-hidden="true">←</span> Volver al inicio
+        </a>
+    </header>
+
+    <main class="contenedor-principal">
+
+        <!-- PANTALLA DE BIENVENIDA -->
+
+        <section class="pantalla pantalla-bienvenida" id="bienvenida">
+
+            <div class="etiqueta">
+                ORIENTACIÓN VOCACIONAL
+            </div>
+
+            <div class="ilustracion" aria-hidden="true">
+                <div class="circulo-fondo"></div>
+
+                <div class="ventana-codigo">
+                    <div class="puntos-ventana">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <div class="linea-codigo linea-corta"></div>
+                    <div class="linea-codigo linea-larga"></div>
+                    <div class="linea-codigo linea-media"></div>
+                    <div class="linea-codigo linea-corta"></div>
+
+                    <div class="simbolo-codigo">&lt;/&gt;</div>
+                </div>
+
+                <div class="adorno adorno-uno">{ }</div>
+                <div class="adorno adorno-dos">01</div>
+            </div>
+
+            <h1>
+                ¿Te gustaría crear<br>
+                <span>tecnología?</span>
+            </h1>
+
+            <p class="descripcion-principal">
+                Descubre cómo se relacionan tus intereses, tu forma
+                de pensar y tus preferencias con el mundo del
+                Desarrollo de Software.
+            </p>
+
+            <div class="datos-test">
+                <div class="dato">
+                    <span class="icono-dato" aria-hidden="true">◎</span>
+                    <div>
+                        <strong>8 preguntas</strong>
+                        <small>Sobre tus intereses</small>
+                    </div>
+                </div>
+
+                <div class="dato">
+                    <span class="icono-dato" aria-hidden="true">◷</span>
+                    <div>
+                        <strong>5 minutos aprox.</strong>
+                        <small>A tu propio ritmo</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nota-bienvenida">
+                No necesitas saber programar. Responde con sinceridad:
+                no existen respuestas correctas o incorrectas.
+            </div>
+
+            <button type="button" class="boton boton-principal"
+                    id="comenzar">
+                Comenzar test
+                <span aria-hidden="true">→</span>
+            </button>
+
+            <p class="nota-orientativa">
+                Este test es una herramienta de orientación y
+                exploración personal.
+            </p>
+
+        </section>
+
+        <!-- PANTALLA DE PREGUNTAS -->
+
+        <section class="pantalla pantalla-preguntas"
+                 id="pantalla-preguntas"
+                 hidden>
+
+            <div class="encabezado-test">
+                <div>
+                    <span class="etiqueta">TU PERFIL VOCACIONAL</span>
+                    <h1>Conozcamos tus intereses</h1>
+                    <p>Elige la opción que mejor te represente.</p>
+                </div>
+
+                <div class="numero-pregunta" id="numero-pregunta">
+                    01 / 08
+                </div>
+            </div>
+
+            <div class="progreso-contenedor"
+                 role="group"
+                 aria-label="Progreso del test">
+
+                <div class="progreso-textos">
+                    <span>Tu progreso</span>
+                    <span id="texto-progreso">12 % completado</span>
+                </div>
+
+                <div class="barra-progreso"
+                     id="barra-progreso"
+                     role="progressbar"
+                     aria-label="Progreso del test"
+                     aria-valuemin="0"
+                     aria-valuemax="100"
+                     aria-valuenow="12">
+
+                    <div class="progreso-actual"
+                         id="progreso-actual"></div>
+                </div>
+            </div>
+
+            <div class="tarjeta-pregunta">
+                <span class="categoria-pregunta" id="categoria-pregunta">
+                    LÓGICA Y RAZONAMIENTO
+                </span>
+
+                <h2 id="texto-pregunta">
+                    ¿Cómo te sientes al resolver un problema que requiere pensar paso a paso?
+                </h2>
+
+                <p class="ayuda-pregunta">
+                    Selecciona una sola respuesta.
+                </p>
+
+                <div class="opciones" id="opciones"
+                     role="group"
+                     aria-label="Opciones de respuesta">
+                </div>
+
+                <p class="mensaje-error" id="mensaje-error"
+                   role="alert" hidden>
+                    Selecciona una respuesta para continuar.
+                </p>
+            </div>
+
+            <div class="navegacion-preguntas">
+                <button type="button"
+                        class="boton boton-secundario"
+                        id="anterior">
+                    <span aria-hidden="true">←</span>
+                    Anterior
+                </button>
+
+                <button type="button"
+                        class="boton boton-principal"
+                        id="siguiente">
+                    Siguiente
+                    <span aria-hidden="true">→</span>
+                </button>
+            </div>
+
+            <p class="pie-preguntas">
+                Tus respuestas se utilizan para generar el resultado
+                en esta página.
+            </p>
+
+        </section>
+
+        <!-- PANTALLA DE RESULTADOS -->
+
+        <section class="pantalla pantalla-resultados"
+                 id="pantalla-resultados"
+                 hidden>
+
+            <div class="resultado-icono" aria-hidden="true">
+                <span>✓</span>
+            </div>
+
+            <span class="etiqueta">TEST COMPLETADO</span>
+
+            <h1>¡Gracias por participar!</h1>
+
+            <p class="descripcion-resultado">
+                Según tus respuestas, esta es una orientación inicial
+                sobre tu relación con el área de Desarrollo de Software.
+            </p>
+
+            <div class="tarjeta-resultado">
+                <span class="titulo-resultado">TU RESULTADO ORIENTATIVO</span>
+
+                <div class="puntuacion">
+                    <strong id="puntuacion">0</strong>
+                    <span>/ 100</span>
+                </div>
+
+                <div class="barra-progreso barra-resultado"
+                     role="progressbar"
+                     id="barra-resultado"
+                     aria-label="Puntuación orientativa"
+                     aria-valuemin="0"
+                     aria-valuemax="100"
+                     aria-valuenow="0">
+
+                    <div class="progreso-actual"
+                         id="progreso-resultado"></div>
+                </div>
+
+                <h2 id="titulo-resultado">
+                    Tus intereses están en exploración
+                </h2>
+
+                <p id="descripcion-perfil"></p>
+            </div>
+
+            <div class="recomendaciones">
+                <h2>¿Qué puedes explorar?</h2>
+
+                <ul id="lista-recomendaciones"></ul>
+            </div>
+
+            <div class="aviso-resultado">
+                <strong>Recuerda:</strong> este resultado no determina
+                tus capacidades ni decide qué especialización debes
+                elegir. Tus intereses pueden cambiar y desarrollarse
+                con la práctica, el aprendizaje y la experiencia.
+            </div>
+
+            <div class="acciones-resultado">
+                <button type="button"
+                        class="boton boton-principal"
+                        id="repetir">
+                    <span aria-hidden="true">↻</span>
+                    Repetir test
+                </button>
+
+                <a href="index.html"
+                   class="boton boton-secundario">
+                    Volver al inicio
+                </a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="pie-pagina">
+        <div class="separador-footer"></div>
+
+        <p>Unidad Educativa Fiscal Dolores Sucre</p>
+        <span>Orientación vocacional · Desarrollo de Software</span>
+    </footer>
+
+</body>
+</html>

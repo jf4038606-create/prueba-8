@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Descubre tus intereses y conoce más sobre la especialidad de Gestión Financiera.">
+
+    <meta name="theme-color" content="#123c32">
+
+    <title>Test vocacional | Gestión Financiera</title>
+
+    <link rel="stylesheet" href="test-gestion-financiera.css">
+    <script src="test-gestion-financiera.js" defer></script>
+</head>
+
+<body class="pagina-test-financiero">
+
+    <a class="salto-contenido" href="#contenido-principal">
+        Saltar al contenido principal
+    </a>
+
+    <!-- ENCABEZADO -->
+    <header class="encabezado-test">
+
+        <a class="marca-test" href="gestion-financiera.html">
+            <img src="logo-dolores-sucre.png"
+                 alt="Logo de la Unidad Educativa Fiscal Dolores Sucre">
+
+            <span>
+                Unidad Educativa Fiscal
+                <strong>Dolores Sucre</strong>
+            </span>
+        </a>
+
+        <nav class="navegacion-test" aria-label="Navegación principal">
+            <a href="gestion-financiera.html">
+                ← Volver a Gestión Financiera
+            </a>
+
+            <a href="#test-vocacional">
+                Comenzar el test ↓
+            </a>
+        </nav>
+
+    </header>
+
+
+    <main id="contenido-principal" class="contenedor-test">
+
+        <!-- PORTADA -->
+        <section class="hero-test" aria-labelledby="titulo-test">
+
+            <div class="hero-test-texto">
+
+                <span class="etiqueta-test">
+                    🧭 ORIENTACIÓN VOCACIONAL
+                </span>
+
+                <h1 id="titulo-test">
+                    ¿La Gestión Financiera va contigo?
+                </h1>
+
+                <p>
+                    Descubre tus intereses, explora tus habilidades y conoce
+                    algunas actividades relacionadas con esta especialidad.
+                    Responde con sinceridad y avanza a tu propio ritmo.
+                </p>
+
+                <a href="#test-vocacional"
+                   class="boton-test boton-test-principal">
+                    Empezar ahora
+                    <span aria-hidden="true">→</span>
+                </a>
+
+                <div class="datos-test">
+                    <span>📝 10 preguntas</span>
+                    <span>⏱️ 3–5 minutos</span>
+                    <span>✨ Resultado inmediato</span>
+                </div>
+
+            </div>
+
+            <!-- ILUSTRACIÓN DECORATIVA -->
+            <div class="hero-test-visual" aria-hidden="true">
+
+                <div class="orbita orbita-una"></div>
+                <div class="orbita orbita-dos"></div>
+
+                <div class="ilustracion-test">
+
+                    <span class="ilustracion-moneda">💰</span>
+                    <span class="ilustracion-grafico">📊</span>
+                    <span class="ilustracion-portapapeles">📋</span>
+
+                    <div class="mini-grafico">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                    </div>
+
+                </div>
+
+                <span class="decoracion-test decoracion-estrella">✦</span>
+                <span class="decoracion-test decoracion-punto">●</span>
+
+            </div>
+
+        </section>
+
+
+        <!-- AVISO -->
+        <section class="nota-test" aria-label="Información importante">
+
+            <span class="nota-test-icono" aria-hidden="true">💡</span>
+
+            <p>
+                <strong>Antes de comenzar:</strong> no hay respuestas buenas
+                ni malas. Elige la opción que mejor represente tus intereses.
+                Este test es orientativo y no determina por sí solo qué
+                especialidad debes elegir.
+            </p>
+
+        </section>
+
+
+        <!-- TEST: UNA PREGUNTA POR PANTALLA -->
+        <section id="test-vocacional"
+                 class="zona-test"
+                 aria-labelledby="titulo-preguntas">
+
+            <div class="encabezado-seccion-test">
+
+                <span class="etiqueta-test etiqueta-clara">
+                    DESCUBRE TUS INTERESES
+                </span>
+
+                <h2 id="titulo-preguntas">
+                    Conócete un poco más
+                </h2>
+
+                <p>
+                    Lee cada pregunta, selecciona una respuesta y continúa
+                    cuando estés listo.
+                </p>
+
+            </div>
+
+
+            <!-- BARRA DE PROGRESO -->
+            <div class="progreso-contenedor">
+
+                <div class="progreso-textos">
+                    <span id="numero-pregunta">Pregunta 1 de 10</span>
+                    <span id="progreso-porcentaje">0%</span>
+                </div>
+
+                <div id="barra-progreso"
+                     class="barra-progreso"
+                     role="progressbar"
+                     aria-label="Progreso de respuestas"
+                     aria-valuemin="0"
+                     aria-valuemax="10"
+                     aria-valuenow="0">
+
+                    <span id="barra-progreso-relleno"></span>
+
+                </div>
+
+                <p id="progreso-texto" class="progreso-ayuda">
+                    Has respondido 0 de 10 preguntas.
+                </p>
+
+            </div>
+
+
+            <!-- CONTENEDOR DINÁMICO -->
+            <form id="form-test" class="formulario-test" novalidate>
+
+                <div id="pregunta-actual"
+                     class="pregunta-actual"
+                     aria-live="polite">
+
+                    <!-- JavaScript coloca aquí una sola pregunta -->
+
+                </div>
+
+                <p id="mensaje-validacion"
+                   class="mensaje-validacion"
+                   role="alert"
+                   hidden>
+                </p>
+
+
+                <!-- CONTROLES DE NAVEGACIÓN -->
+                <div class="acciones-pregunta">
+
+                    <button type="button"
+                            id="btn-anterior"
+                            class="boton-test boton-secundario">
+                        <span aria-hidden="true">←</span>
+                        Anterior
+                    </button>
+
+                    <span class="indicador-paso" id="indicador-paso">
+                        01 / 10
+                    </span>
+
+                    <button type="button"
+                            id="btn-siguiente"
+                            class="boton-test boton-test-principal">
+                        Siguiente
+                        <span aria-hidden="true">→</span>
+                    </button>
+
+                    <button type="button"
+                            id="btn-resultado"
+                            class="boton-test boton-test-principal"
+                            hidden>
+                        Ver mi resultado
+                        <span aria-hidden="true">✦</span>
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- RESULTADO FINAL -->
+        <section id="resultado-test"
+                 class="resultado-test"
+                 aria-labelledby="titulo-resultado"
+                 aria-live="polite"
+                 hidden>
+
+            <div class="resultado-confeti" aria-hidden="true">
+                <span>✦</span>
+                <span>✧</span>
+                <span>✦</span>
+                <span>✧</span>
+                <span>✦</span>
+            </div>
+
+            <span class="etiqueta-test etiqueta-clara">
+                TU RESULTADO ORIENTATIVO
+            </span>
+
+            <div id="resultado-icono"
+                 class="resultado-icono"
+                 aria-hidden="true">
+                🧭
+            </div>
+
+            <h2 id="titulo-resultado">
+                Este es tu resultado
+            </h2>
+
+            <p id="resultado-descripcion"
+               class="resultado-descripcion">
+            </p>
+
+
+            <!-- PUNTUACIÓN -->
+            <div class="puntuacion-contenedor">
+
+                <div class="puntuacion-circulo">
+                    <strong id="puntuacion-total">0</strong>
+                    <span>/ 30 puntos</span>
+                </div>
+
+                <div class="puntuacion-texto">
+                    <strong id="puntuacion-etiqueta">
+                        Tus intereses están en exploración
+                    </strong>
+
+                    <p>
+                        Esta puntuación resume tus respuestas.
+                        No mide tu capacidad ni determina tu futuro.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- ÁREA CON MAYOR INTERÉS -->
+            <div class="perfil-intereses">
+
+                <h3>🔎 Área que más te llamó la atención</h3>
+
+                <div class="perfil-destacado">
+
+                    <span id="perfil-icono" aria-hidden="true">📊</span>
+
+                    <div>
+                        <strong id="perfil-titulo">
+                            Análisis y organización
+                        </strong>
+
+                        <p id="perfil-descripcion"></p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RECOMENDACIONES -->
+            <div class="recomendaciones-test">
+
+                <h3>🌱 ¿Qué podrías hacer ahora?</h3>
+
+                <ul id="lista-recomendaciones"></ul>
+
+            </div>
+
+
+            <p class="aviso-resultado">
+                Este resultado es solamente una guía para reflexionar.
+                Explora otras especialidades, consulta el plan de estudios
+                y conversa con docentes u orientadores antes de tomar
+                una decisión.
+            </p>
+
+
+            <!-- BOTONES FINALES -->
+            <div class="acciones-resultado">
+
+                <button type="button"
+                        id="btn-repetir"
+                        class="boton-test boton-test-principal">
+                    ↻ Volver a responder
+                </button>
+
+                <a href="gestion-financiera.html"
+                   class="boton-test boton-secundario">
+                    Volver a Gestión Financiera
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- CIERRE -->
+        <section class="cierre-test">
+
+            <span aria-hidden="true">🌟</span>
+
+            <div>
+                <h2>Tu futuro se construye paso a paso</h2>
+
+                <p>
+                    Explorar tus opciones y conocerte mejor puede ayudarte
+                    a tomar decisiones informadas sobre tu formación.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="pie-test">
+
+        <div class="pie-test-interior">
+
+            <img src="logo-dolores-sucre.png"
+                 alt=""
+                 loading="lazy">
+
+            <p>Unidad Educativa Fiscal Dolores Sucre</p>
+
+        </div>
+
+        <p class="copyright-test">
+            © <span id="anio-pie"></span> · Orientación académica
+        </p>
+
+    </footer>
+
+</body>
+</html>
